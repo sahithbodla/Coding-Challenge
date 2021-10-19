@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className = "container">
+    <div className = "containr">
       <ToDo setId={getId} setToDoId = {getToDoId} setTitle={getTitle} />
       {idFromToDo ? <UserDetail id={idFromToDo} toDoId={toDoIdFromToDo} title={titleFromToDo}/> : <div></div>}      
     </div>
