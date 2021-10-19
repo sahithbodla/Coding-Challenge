@@ -57,12 +57,12 @@ const ToDo = ({setId,setToDoId,setTitle}) => {
     }
 
     return <React.Fragment>
-        <div>
+        <div className="left-margin">
             <div className="containr">
-                <strong>ToDos</strong>
+                <h3>ToDos</h3>
                 <input type="text" placeholder="Search" ref={searchRef} onChange={() => setSearch(searchRef.current.value)}/>
             </div>       
-            <table>
+            <table className="table table-striped table-bordered table-hover">
                 <thead>
 
                         <tr>

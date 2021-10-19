@@ -1,4 +1,10 @@
 .containr {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.left-margin {
+  margin-left: 20px;
 }
