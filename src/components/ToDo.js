@@ -3,6 +3,26 @@ import axios from 'axios';
 
 const ToDo = ({setId,setToDoId,setTitle}) => {
     const [toDoDataArray,setToDoDataArray] = useState([]);
+    const [doSort,setToDoSort] = useState(null);
+
+    if(doSort !== null){
+        toDoDataArray.sort((a,b) => {
+            if(a.id<b.id){
+                return doSort.direction === "ascending" ? -1 : 1
+            } else if(a.id>b.id){
+                return doSort.direction === "ascending" ? 1 : -1
+            } else return 0;
+            
+        });
+    } 
+
+    const configSort = () => {
+        let direction = "ascending"
+        if(doSort && doSort.direction === "ascending"){
+            direction = "descending"
+        }
+        setToDoSort({direction})
+    }
 
     useEffect( () => {
         axios.get("https://jsonplaceholder.typicode.com/todos")
@@ -23,8 +43,8 @@ const ToDo = ({setId,setToDoId,setTitle}) => {
             <thead>
 
                     <tr>
-                        <th>
-                            ToDo Id
+                        <th onClick={configSort}>
+                            ToDo ID
                         </th>
                         <th>
                             Title
