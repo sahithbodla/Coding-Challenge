@@ -15,7 +15,7 @@ const UserDetail = ({id, toDoId, title}) => {
     return <React.Fragment>
         <div className="details">
 
-        User Details <br /><br />
+        <strong>User Details </strong><br /><br />
         ToDo Id: {toDoId} <br />
         ToDo Title: {title} <br />
         User Id : {userData.id} <br />

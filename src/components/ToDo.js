@@ -15,7 +15,7 @@ const ToDo = ({setId,setToDoId,setTitle}) => {
     } else {
         newArray = toDoDataArray.filter((obj) => {
             for(let key in obj){
-                if(obj[key].toString().indexOf(search,0) !== -1) {
+                if(obj[key].toString().indexOf(search,0) !== -1 && key !== "userId" && key !== "completed") {
                     return true;
                 }
             }
