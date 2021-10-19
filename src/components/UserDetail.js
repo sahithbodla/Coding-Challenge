@@ -28,11 +28,11 @@ const UserDetail = ({id, toDoId, title}) => {
                                 </tr>
                                 <tr>
                                     <th>ToDo Title:</th>
-                                    <td>{toDoId}</td>
+                                    <td>{title}</td>
                                 </tr>
                                 <tr>
-                                    <th>ToDo Id:</th>
-                                    <td>{title}</td>
+                                    <th>User Id:</th>
+                                    <td>{id}</td>
                                 </tr>
                                 <tr>
                                     <th>Name:</th>
