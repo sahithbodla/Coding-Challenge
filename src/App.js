@@ -6,15 +6,25 @@ import UserDetail from './components/UserDetail';
 function App() {
 
   const [idFromToDo,setIdFromToDo] = useState(false)
+  const [toDoIdFromToDo,setToDoIdFromToDo] = useState(false)
+  const [titleFromToDo,setTitleFromToDo] = useState(false)
 
-  const getData = (id) => {
-    setIdFromToDo(id)
+  const getId = (id) => {
+    setIdFromToDo(id);
+  }
+
+  const getToDoId = (toDoId) => {
+    setToDoIdFromToDo(toDoId);
+  }
+
+  const getTitle = (title) => {
+    setTitleFromToDo(title);
   }
 
   return (
     <div className = "container">
-      <ToDo setId={getData} />
-      {idFromToDo ? <UserDetail id={idFromToDo}/> : <div></div>}      
+      <ToDo setId={getId} setToDoId = {getToDoId} setTitle={getTitle} />
+      {idFromToDo ? <UserDetail id={idFromToDo} toDoId={toDoIdFromToDo} title={titleFromToDo}/> : <div></div>}      
     </div>
   );
 }

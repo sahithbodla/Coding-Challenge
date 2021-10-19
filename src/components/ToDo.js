@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-const ToDo = ({setId}) => {
+const ToDo = ({setId,setToDoId,setTitle}) => {
     const [toDoDataArray,setToDoDataArray] = useState([]);
 
     useEffect( () => {
@@ -11,6 +11,12 @@ const ToDo = ({setId}) => {
         })
         .catch(error => console.log(error.message))
     },[])
+
+    const setData = (id,toDoId,title) => {
+        setId(id);
+        setTitle(title);
+        setToDoId(toDoId);
+    }
 
     return <React.Fragment>
         <table>
@@ -46,7 +52,7 @@ const ToDo = ({setId}) => {
                                 {obj.completed ? "Complete" : "Incomplete"}
                             </td>
                             <td>
-                                <button onClick={() => setId(obj.userId)}>View User</button>
+                                <button onClick={() => setData(obj.userId,obj.id,obj.title)}>View User</button>
                             </td>
                         </tr>
                     )

@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import axios from "axios";
+import './UserDetail.css'
 
-const UserDetail = ({id}) => {
+const UserDetail = ({id, toDoId, title}) => {
     const [userData, setUserData] = useState('');
     const url = `https://jsonplaceholder.typicode.com/users/${id}`
 
@@ -12,10 +13,16 @@ const UserDetail = ({id}) => {
     },[userData])
 
     return <React.Fragment>
-        ToDo Id : {userData.id} <br />
-        
+        <div className="details">
+
+        User Details <br /><br />
+        ToDo Id: {toDoId} <br />
+        ToDo Title: {title} <br />
+        User Id : {userData.id} <br />
+
         Name: {userData.name} <br />
         Email: {userData.email} <br />
+        </div>
     </React.Fragment>
 }
 
