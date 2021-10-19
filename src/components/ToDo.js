@@ -95,7 +95,7 @@ const ToDo = ({setId,setToDoId,setTitle}) => {
                                     {obj.completed ? "Complete" : "Incomplete"}
                                 </td>
                                 <td>
-                                    <button onClick={() => setData(obj.userId,obj.id,obj.title)}>View User</button>
+                                    <button className="btn btn-secondary" onClick={() => setData(obj.userId,obj.id,obj.title)}>View User</button>
                                 </td>
                             </tr>
                         )

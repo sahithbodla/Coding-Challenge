@@ -14,18 +14,36 @@ const UserDetail = ({id, toDoId, title}) => {
 
     return <React.Fragment>
         <div className="details">
-            <div className="card border-secondary text-center">
+            <div className="card border-secondary">
                 <div className="card-header">
                     <h4>User Details</h4> 
                 </div>
                 <div className="card-body">
                     <div className="card-text">
-                        ToDo Id: {toDoId} <br />
-                        ToDo Title: {title} <br />
-                        User Id : {userData.id} <br />
-
-                        Name: {userData.name} <br />
-                        Email: {userData.email} <br />
+                        <table className="table table-striped table-bordered table-hover">
+                            <tbody>
+                                <tr>
+                                    <th>ToDo Id:</th>
+                                    <td>{toDoId}</td>
+                                </tr>
+                                <tr>
+                                    <th>ToDo Title:</th>
+                                    <td>{toDoId}</td>
+                                </tr>
+                                <tr>
+                                    <th>ToDo Id:</th>
+                                    <td>{title}</td>
+                                </tr>
+                                <tr>
+                                    <th>Name:</th>
+                                    <td>{userData.name}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email:</th>
+                                    <td>{userData.email}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     
                 </div>
